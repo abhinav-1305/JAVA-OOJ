@@ -1,45 +1,45 @@
 import java.util.Scanner;
-public class Main{
-   public static void main(String args[]){
-         Scanner sc=new Scanner(System.in);
-         double p;
-         double q;
-         double d;
-         double r;
-         double r1;
-         double r2;
-         System.out.println("enter the coefficient of x2 whch is a: ");
-         int a=sc.nextInt();
-         System.out.println("enter the coefficient of x which is b: ");
-         int b=sc.nextInt();
-         System.out.println("enter the constant c: ");
-         int c=sc.nextInt();
-         if(a==0){
-         System.out.println("you cannot enter 0 as a value of a ");
-         }
-         d=(b*b)-4*a*c;
-         if(a!=0)
-         {
-             if(d==0){
-                r=-b/(2*a);
-                System.out.println("therefore the roots are "+r+" and"+r);      
-         }
-             else if(d>0){
-                r1=(-b+Math.sqrt(b*b-4*a*c))/(2*a);
-                r2=(-b-Math.sqrt(b*b-4*a*c))/(2*a);
-                System.out.println("therefore the roots are "+r1+" and "+r2);      
-         }
-             else{
-                p=(-b)/(2*a);
-                q=Math.sqrt(Math.abs(d))/(2*a);
-                System.out.println("the first root is"+p+"+i"+q);
-                System.out.println("the second root is"+p+"-i"+q);
+class QuadraticEq1
+{
+  public static void main(String XX[])
+  {
+   double a;
+   double b;
+   double c;
+   double root1,root2;
+
+   Scanner SS=new Scanner(System.in);
+   System.out.print("Enter the values of a,b,c");
+   a=SS.nextDouble();
+   b=SS.nextDouble();
+   c=SS.nextDouble();
+   double determinant=b*b-4*a*c;
+     {
+       if(a==0)
+       System.out.print("It is not a quadratic equation");
+       else
+         { 
+           if(determinant>0)
+             {
+               root1=((-b+Math.sqrt(determinant))/2*a);
+               root2=((-b-Math.sqrt(determinant))/2*a);
+               System.out.print("The roots are distinct and real:"+root1+"and "+root2);
+              }
+           if(determinant==0)
+             { 
+               root1=root2=-b/2*a;
+               System.out.print("The roots are equal:"+root1);
+              }
+           if(determinant<0)
+             {
+               root1=((-b+Math.abs(Math.sqrt(determinant)))/2*a);
+               root2=((-b-Math.abs(Math.sqrt(determinant)))/2*a);
+               System.out.print("the roots are imaginary:"+"i"+root1+" "+"i"+root2);
+             }
          }
      }
-   }
+  }
 }
-
-
 
 
 
